@@ -40,8 +40,20 @@ public class Postagem {
 	@ManyToOne
 	@JsonIgnoreProperties("postagem") //faz com que quando tiver requisição get evite/pare a recursividade infinita por estar referenciando os dados de tema.
 	private Tema tema;
+	
+	@ManyToOne
+	@JsonIgnoreProperties("postagem") //faz com que quando tiver requisição get evite/pare a recursividade infinita por estar referenciando os dados de tema.
+	private Usuario usuario;
 
 	
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
 	public Tema getTema() {
 		return tema;
 	}
