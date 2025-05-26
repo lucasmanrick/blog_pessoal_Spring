@@ -46,6 +46,10 @@ public class UsuarioService {
 	}
 	
 	
+	public Optional<Usuario> getUserById (Long id) {
+		return usuarioRepository.findById(id);
+	}
+	
 	public Optional<Usuario> atualizarUsuario (@Valid @RequestBody Usuario usuario) {
 		
 		Optional<Usuario> newUserValidate = usuarioRepository.findByUsuario(usuario.getUsuario()); 
