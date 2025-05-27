@@ -17,7 +17,7 @@ public class TestBuilder {
 	}
 	
 	public static Usuario criarUsuarioRoot () {
-		return criarUsuario(null, "Root", "root@email.com", "1234");
+		return criarUsuario(null, "Root", "root@root.com", "1234");
 	}
 	
 	public static UsuarioLogin criandoUsuarioLogin (String usuario, String senhaInsert) {

@@ -73,7 +73,6 @@ public class PostagemController {
 		if(postagem.getId() != null) { //se o campo id for enviado na requisição segue se não retorna erro
 		
 		if(postagemRepository.existsById(postagem.getId())) //verifica se o id existe no banco de dados para atualizar, pois se o id já existir ele ira atualizar, mas se o id não existir ele cria um novo registro e não é o que queremos.
-			
 			if(temaRepository.existsById(postagem.getTema().getId())) {//verifica se o tema sendo inserido existe na tabela temas.
 			return ResponseEntity.status(HttpStatus.OK).body(postagemRepository.save(postagem));  
 			}else {
