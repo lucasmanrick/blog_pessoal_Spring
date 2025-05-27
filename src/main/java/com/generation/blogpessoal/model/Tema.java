@@ -32,7 +32,7 @@ public class Tema {
 	
 	
 	
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "tema", cascade = CascadeType.REMOVE) // aki definimos que o campo/atributo dessa tabela tema, fetch sendo lazy ele só carrega os dados desse campo caso requisitemos ele, se não requisitar-mos ele não puxa os dados, já se colocassemos o tipo EAGER ele ja traria os dados. O mappedBy referencia ao campo/atributo "TEMA" da tabela POSTAGEM e por fim o cascade faz com que se um registro for deletado ele deleta das demais tabelas que tem essa linkagem/relacionamento.
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "tema", cascade = CascadeType.REMOVE) // aki definimos que o campo/atributo dessa tabela tema, fetch sendo lazy ele só carrega os dados desse campo caso requisitemos ele, se não requisitar-mos ele não puxa os dados, já se colocassemos o tipo EAGER ele ja traria os dados. O mappedBy referencia ao campo/atributo "TEMA" da tabela POSTAGEM e por fim o cascade faz com que se um registro for deletado ele deleta das demais tabelas que tem essa linkagem/relacionamento.
 	@JsonIgnoreProperties("tema") // ignora recursividade ao fazer um get, ou seja ao fazer um get nessa tabela ele nao fica referenciando a tabela postagem e a tabela postagem voltando a referenciar a esta infinitamente.
 	private List<Postagem> postagem;
 
